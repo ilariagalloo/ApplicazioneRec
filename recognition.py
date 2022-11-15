@@ -26,7 +26,7 @@ def lettura(path, size):
                 training_x.append(img)
                 training_y.append(etichetta)
             #le etichette sono dei numeri
-            etichetta += 1#ogni nome ha una etichetta associata monica 0, rachel 1
+            etichetta += 1
 
     training_x = np.asarray(training_x, np.uint8)#conversione in array np
     training_y = np.asarray(training_y, np.int32)
@@ -48,8 +48,8 @@ if __name__ == "__main__":
     #test_img = '/Users/ilariagallo/Desktop/ApplicazioneRec/Bill_Gates.jpeg'
     test_img = '/Users/ilariagallo/Desktop/ApplicazioneRec/Bill_Clinton_0004.jpg'
     img = cv2.imread(test_img)
-    #il rilevamento del volto avviene sull'immagine in scala di girigi
-    #in seguito gli elementi rilevati sono evidenzianti tramite cornici sull'immagine originale
+    #il rilevamento del volto avviene sull'immagine in scala di grigi
+    #in seguito gli elementi rilevati sono evidenziati tramite cornici sull'immagine originale
     img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     volti = face_cascade.detectMultiScale(img, scaleFactor=1.3,minNeighbors= 5)
     
